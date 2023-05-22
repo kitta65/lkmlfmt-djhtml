@@ -1,8 +1,8 @@
 import re
 from typing import Any
 
-from djhtml.lines import Line
-from djhtml.modes import DjHTML
+from djhtml.lines import Line  # type: ignore
+from djhtml.modes import DjHTML  # type: ignore
 
 LIQUID_MARKER = "{{% set LKMLFMT_MARKER = {} %}}"
 TEMPLATE = re.compile(
@@ -10,6 +10,7 @@ TEMPLATE = re.compile(
     + r"""|(?P<obj>\{\{([^"'}]*|'[^']*?'|"[^"]*?")*?\}\})"""
     + r"""|(?P<looker>(\$|@)\{[^}]*?\})""",
 )
+
 
 def to_jinja(liquid: str) -> tuple[str, list[str], list[str]]:
     jinja = ""
