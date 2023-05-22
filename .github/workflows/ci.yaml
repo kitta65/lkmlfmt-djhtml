@@ -1,0 +1,31 @@
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: poetry
+      - run: poetry install
+      - run: make test
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ github.ref_type == 'tag' }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dr666m1/tag-version-match@main
+        with:
+          file: ./pyproject.toml
+          query: .tool.poetry.version
+          pattern: '^([0-9]+\.[0-9]+\.[0-9]+)$'
+      - run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: make publish
+        env:
+          PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
