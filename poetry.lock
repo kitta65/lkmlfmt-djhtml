@@ -137,6 +137,40 @@ plugins = ["setuptools"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
+name = "lark"
+version = "1.1.5"
+description = "a modern parsing library"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "lark-1.1.5-py3-none-any.whl", hash = "sha256:8476f9903e93fbde4f6c327f74d79e9b4bd0ed9294c5dfa3164ab8c581b5de2a"},
+    {file = "lark-1.1.5.tar.gz", hash = "sha256:4b534eae1f9af5b4ea000bea95776350befe1981658eea3820a01c37e504bb4d"},
+]
+
+[package.extras]
+atomic-cache = ["atomicwrites"]
+nearley = ["js2py"]
+regex = ["regex"]
+
+[[package]]
+name = "lkmlfmt"
+version = "0.0.7"
+description = ""
+category = "dev"
+optional = false
+python-versions = ">=3.11,<4.0"
+files = [
+    {file = "lkmlfmt-0.0.7-py3-none-any.whl", hash = "sha256:6b846c65616e376b33bfdec0096d6b410984663f660a073b6dc7aa4090721495"},
+    {file = "lkmlfmt-0.0.7.tar.gz", hash = "sha256:21af0188b52a43745fd2bc4657c9e0eade6c79c20a8cec734496af4bded73887"},
+]
+
+[package.dependencies]
+click = ">=8.1.3,<9.0.0"
+lark = ">=1.1.5,<2.0.0"
+shandy-sqlfmt = ">=0.18.1,<0.19.0"
+
+[[package]]
 name = "mccabe"
 version = "0.7.0"
 description = "McCabe checker, plugin for flake8"
@@ -308,6 +342,48 @@ pluggy = ">=0.12,<2.0"
 testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "shandy-sqlfmt"
+version = "0.18.1"
+description = "sqlfmt is an opinionated CLI tool that formats your sql files"
+category = "dev"
+optional = false
+python-versions = ">=3.7,<4.0"
+files = [
+    {file = "shandy_sqlfmt-0.18.1-py3-none-any.whl", hash = "sha256:afe5c7be494c4e8ecf85e96ea0b96ff81d9879dcf09c2a9e43d8830bb2c0172d"},
+    {file = "shandy_sqlfmt-0.18.1.tar.gz", hash = "sha256:4ccf0dff917adc226e34a6eead5951c38939eda7777549975ed47d6fdd346140"},
+]
+
+[package.dependencies]
+click = ">=8.0,<9.0"
+platformdirs = ">=2.4,<4.0"
+tqdm = ">=4.0,<5.0"
+
+[package.extras]
+jinjafmt = ["black"]
+sqlfmt-primer = ["gitpython (>=3.1.24,<4.0.0)"]
+
+[[package]]
+name = "tqdm"
+version = "4.65.0"
+description = "Fast, Extensible Progress Meter"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tqdm-4.65.0-py3-none-any.whl", hash = "sha256:c4f53a17fe37e132815abceec022631be8ffe1b9381c2e6e30aa70edc99e9671"},
+    {file = "tqdm-4.65.0.tar.gz", hash = "sha256:1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["py-make (>=0.1.0)", "twine", "wheel"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
 name = "typing-extensions"
 version = "4.5.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -322,4 +398,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "13808649265a0f63a691a86ea6b2bbccd87bf1dd30dc5d308979bc889fff56b6"
+content-hash = "d756fabb245db3acb436aed3111dec21b9e4058f3fe431dd555a74a7f3e2e732"
