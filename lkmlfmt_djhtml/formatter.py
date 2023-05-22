@@ -119,7 +119,7 @@ def to_jinja(liquid: str) -> tuple[str, list[str], list[str]]:
 
 def to_liquid(jinja: str, templates: list[str], dummies: list[str]) -> str:
     liquid = ""
-    trailing = ""
+    trailing = jinja
 
     for i in range(len(templates)):
         leading, trailing, *_ = jinja.split(f"{dummies[i]}{LIQUID_MARKER.format(i)}")
