@@ -10,7 +10,7 @@ pip install lkmlfmt lkmlfmt-djhtml
 ## CLI
 
 ```sh
-lkmlfmt --plugin lkmlfmt_djhtml
+lkmlfmt --plugin lkmlfmt_djhtml [FILE]...
 ```
 
 ## API
