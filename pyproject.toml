@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "lkmlfmt-djhtml"
+version = "0.0.1"
+description = "a plugin for lkmlfmt"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "lkmlfmt_djhtml"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+djhtml = "^3.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
