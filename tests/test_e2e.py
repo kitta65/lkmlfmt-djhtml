@@ -1,5 +1,5 @@
 import pytest
-from lkmlfmt import fmt  # type: ignore
+from lkmlfmt import fmt
 
 from tests import utils
 
